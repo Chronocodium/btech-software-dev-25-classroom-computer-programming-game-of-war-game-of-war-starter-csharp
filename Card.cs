@@ -33,7 +33,7 @@ namespace GameOfWar
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(nameof(value), "The rank must be between 0 and 12");
+                    throw new ArgumentOutOfRangeException(nameof(value), "The rank must be between 0 and 12.");
                 }
             }
         }

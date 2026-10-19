@@ -13,7 +13,6 @@ namespace GameOfWar
             "Hearts", "Diamonds", "Clubs", "Spades"
         };
 
-
         // Create a public int property Count that returns the Count value from the private collection _cards
         public int Count
         {
@@ -23,17 +22,26 @@ namespace GameOfWar
             }
         }
 
-
         // Create a private field _cards that is a List<Card>
         private List<Card> _cards;
 
         // Create a public constructor that takes two parameter: a List<card> called cards and a boolean value called isEmptyDeck
-        // If cards is not null and has elements in it, assign it to _cards and be done
-        // If cards is null or empty:
-        //     _cards should be initialized as an empty List<Card>
-        //     InitializeDeck() should be called if and only if isEmptyDeck is false
-
-
+        public Deck(List<Card>? cards, bool isEmptyDeck)
+        {
+            // If cards is not null and has elements in it, assign it to _cards and be done
+            if (cards != null && cards.Count > 0)
+            {
+                _cards = cards;
+            }
+            // If cards is null or empty:
+            else if(cards == null || cards.Count == 0) 
+            {
+                // _cards should be initialized as an empty List<Card>
+                _cards = new List<Card>();
+                // InitializeDeck() should be called if and only if isEmptyDeck is false
+            }
+        }
+        
         // Create a private void method called InitializeDeck() which does the following:
         // Use RankNames and Suits in nested loops to generate all 52 combinations of rank and suit and add them to _cards
 
